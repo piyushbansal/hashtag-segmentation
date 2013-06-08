@@ -1,0 +1,27 @@
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans">
+{% block body %}
+<html>
+<body class = "main">
+<div class = "heading" align = "center">
+Twitter Hashtag Segmenter
+</div>
+</br></br></br>
+<form class="form-wrapper cf" action="{{ url_for('index') }}" method=post>
+            <p><input type=text name=text size=60 placeholder = 'Please enter a hashtag to segment..' required>
+	    <button type="submit">Enter</button>
+</form>
+{% if returval != 'Please enter a hashtag to segment.' %}
+{% for el in returval %}
+<li class = "answer-wrapper" align = 'center'> <a href = '#'>{{el[0] }} </a> 
+<div class = "small" >Score: &nbsp;&nbsp; {{el[1]}} </div> </li>
+{% endfor %}
+{% endif %}
+</br>
+<div id ="footer" align = "center">
+<a href = "http://web.iiit.ac.in/~piyush.bansal">Drop by!</a>
+</div>
+
+</body>
+</html>
+{% endblock %}
