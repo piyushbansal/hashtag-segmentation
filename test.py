@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, render_template, request
-from parse_rest.connection import register
 from hashtag import newDP as DP
 
 app = Flask(__name__)
