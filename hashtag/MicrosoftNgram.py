@@ -89,7 +89,7 @@ class LookupService(object):
         if (serviceUri is None):
             self.serviceUri = os.getenv('NGRAM_SERVICEURI')
             if (self.serviceUri is None):
-                self.serviceUri = "http://web-ngram.research.microsoft.com/rest/lookup.svc/";
+                self.serviceUri = "http://weblm.research.microsoft.com/weblm/rest.svc/";
         else:
             self.serviceUri = serviceUri
 
